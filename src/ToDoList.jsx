@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import "./ToDoList.css";
 import {
@@ -8,7 +8,24 @@ import {
 } from "react-icons/fa";
 
 export default function ToDoList() {
-    let [todos, setTodos] = useState([{task: "Sample Task", id: uuidv4(), isDone: false }]);
+    let [todos, setTodos] = useState(() => {
+        const savedTodos = localStorage.getItem("todos");
+
+        if (savedTodos !== null) {
+            return JSON.parse(savedTodos);
+        }
+
+        return [
+            {
+                task: "Sample Task",
+                id: uuidv4(),
+                isDone: false,
+            },
+        ];
+    });
+    useEffect(() => {
+        localStorage.setItem("todos", JSON.stringify(todos));
+    }, [todos]);
     let [newTodo, setNewTodo] = useState("");
 
     let addNewTask = () => {

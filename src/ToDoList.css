@@ -255,13 +255,17 @@ body{
 }
 
 .todo-app{
+    width: 700px;
+    min-height: 500px;
 
-    width:380px;
     background:#1e293b;
     border:1px solid #334155;
-    border-radius:12px;
-    padding:20px;
-    box-shadow:0 10px 25px -5px rgba(0,0,0,0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    border-radius:16px;
+
+    padding:28px;
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.25),
+        0 20px 50px rgba(0,0,0,.18);
 }
 
 .header{
@@ -388,11 +392,11 @@ body{
 
     display:flex;
     justify-content:space-between;
-    align-items:center;
+    align-items:flex-start;
     background:#0f172a;
     border:1px solid #1e293b;
-    border-radius: 8px;
-    padding: 10px 12px;
+    border-radius: 10px;
+    padding: 16px 18px;
     transition:.25s;
     animation: slideDownAndFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
@@ -405,24 +409,31 @@ body{
 .left{
 
     display:flex;
-    align-items:center;
-    gap:12px;
+    align-items:flex-start;
+    gap:16px;
     cursor:pointer;
     flex:1;
 }
 
 .checkbox{
+    width:22px;
+    height:22px;
 
-    width: 18px;
-    height: 18px;
-    border: 1.5px solid #64748b;
+    min-width:22px;
+    min-height:22px;
+
+    border:2px solid #64748b;
     border-radius:50%;
+
     display:flex;
     justify-content:center;
     align-items:center;
-    color:white;
+
+    margin-top:2px;
+
+    flex-shrink:0;
+
     transition:.25s;
-    font-size:10px;
 }
 
 .checkbox.active{
@@ -432,9 +443,13 @@ body{
 }
 
 .todo-item span{
+    flex:1;
 
     color:white;
-    font-size:14px;
+    font-size:15px;
+    line-height:1.5;
+
+    overflow-wrap:anywhere;
     word-break:break-word;
 }
 
@@ -445,10 +460,14 @@ body{
 }
 
 .trash{
-
     color:#64748b;
     cursor:pointer;
-    font-size:15px;
+    font-size:18px;
+
+    margin-left:18px;
+
+    flex-shrink:0;
+
     transition:.25s;
 }
 
