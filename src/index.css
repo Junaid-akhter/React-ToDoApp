@@ -4,10 +4,25 @@
   box-sizing: border-box;
 }
 
-body {
+/* body {
   font-family: "Inter", "Segoe UI", sans-serif;
   background: linear-gradient(135deg, #eef2ff, #f8fafc);
   min-height: 100vh;
+} */
+
+body {
+  margin: 0;
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
 }
 
 button,
