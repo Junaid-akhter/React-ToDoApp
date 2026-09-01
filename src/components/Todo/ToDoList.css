@@ -209,7 +209,7 @@ body{
 
 .todo-item span{
     flex:1;
-
+    text-align:left;
     color:white;
     font-size:15px;
     line-height:1.5;
