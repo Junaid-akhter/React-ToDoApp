@@ -278,3 +278,15 @@ body{
         transform: translateY(0) scale(1);
     }
 }
+
+@media (max-width: 600px) {
+    .todo-wrapper {
+        padding: 10px;
+    }
+
+    .todo-app {
+        width: 100%;
+        max-width: none;
+        padding: 20px;
+    }
+}
